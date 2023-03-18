@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Flats4us</string>
+    <string name="witaj_ponownie">Witaj ponownie</string>
+    <string name="nazwa_email_com">nazwa@email.com</string>
+    <string name="email">Email</string>
+    <string name="password_hint">*******</string>
+    <string name="password">Hasło</string>
 </resources>
