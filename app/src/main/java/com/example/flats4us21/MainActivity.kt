@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+        val buttonLogin = findViewById<Button>(R.id.buttonRegister)
         buttonLogin.setOnClickListener {
             Toast.makeText(this, "Login button clicked", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, LoginActivity::class.java)
