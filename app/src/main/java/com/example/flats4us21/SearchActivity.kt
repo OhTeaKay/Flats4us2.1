@@ -9,17 +9,13 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 
-class LoginActivity : AppCompatActivity(){
+class SearchActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_search)
 
-        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
-        buttonLogin.setOnClickListener {
-            Toast.makeText(this, "Logowanie", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -30,8 +26,8 @@ class LoginActivity : AppCompatActivity(){
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.about -> Toast.makeText(this,"About Selected", Toast.LENGTH_SHORT).show()
-            R.id.settings -> Toast.makeText(this,"Settings Selected",Toast.LENGTH_SHORT).show()
-            R.id.exit -> Toast.makeText(this,"Exit Selected",Toast.LENGTH_SHORT).show()
+            R.id.settings -> Toast.makeText(this,"Settings Selected", Toast.LENGTH_SHORT).show()
+            R.id.exit -> Toast.makeText(this,"Exit Selected", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
     }
