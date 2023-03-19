@@ -34,7 +34,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
-            android:text="Zalogi się"
+            android:text="Zaloguj się"
             android:textSize="18sp"
             android:textStyle="bold" />
         <Button
