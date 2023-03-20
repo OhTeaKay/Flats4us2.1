@@ -98,6 +98,7 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toTopOf="parent">
+
                     <ImageView
                         android:layout_width="22dp"
                         android:layout_height="22dp"
@@ -105,18 +106,44 @@
                         android:contentDescription="@string/app_name"
                         android:src="@drawable/baseline_lock_24"
                         app:tint="@color/black" />
-                    <EditText
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:background="@null"
-                        android:hint="@string/password_hint"
-                        android:imeOptions="actionNext"
-                        android:importantForAutofill="no"
-                        android:inputType="textPassword"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"/>
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:id="@+id/textPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="55dp"
+                            android:background="@null"
+                            android:hint="*******"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textPassword"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/passwordToggle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/passwordToggle"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="1dp"
+                            android:background="@color/white"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/baseline_visibility_off_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/black" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
                 <TextView
