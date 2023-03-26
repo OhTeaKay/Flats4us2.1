@@ -15,8 +15,8 @@ class OfferDetailActivity : AppCompatActivity() {
         binding = ActivityOfferDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-        bindOfferData(viewModel.getOffer())
+        val offer = intent.extras?.let { viewModel.loadDataFromDb().get(it.getInt("index")) }
+        bindOfferData(offer)
     }
 
     private fun bindOfferData(offer: Offer?) {

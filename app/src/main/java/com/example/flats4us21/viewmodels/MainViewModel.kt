@@ -62,36 +62,19 @@ interface Server {
     fun loadDataFromDb() : List<Offer>
 }
 
-class MainViewModel() : ViewModel(), Server, Parcelable {
-    private var offer: Offer? = null
+class MainViewModel() : ViewModel(), Server {
+    private var offerIndex: Int? = null
 
-    constructor(parcel: Parcel) : this() {
-
-    }
 
     override fun loadDataFromDb(): List<Offer> {
         return data
     }
 
     fun setOffer(offer: Offer){
-        this.offer = offer
+        this.offerIndex = data.indexOf(offer)
     }
-    fun getOffer() = offer
-    override fun describeContents(): Int {
-        return 0
-    }
+    fun getOffer() = offerIndex
 
-    override fun writeToParcel(p0: Parcel, p1: Int) {
-        TODO("Not yet implemented")
-    }
 
-    companion object CREATOR : Parcelable.Creator<MainViewModel> {
-        override fun createFromParcel(parcel: Parcel): MainViewModel {
-            return MainViewModel(parcel)
-        }
 
-        override fun newArray(size: Int): Array<MainViewModel?> {
-            return arrayOfNulls(size)
-        }
-    }
 }
