@@ -24,7 +24,7 @@
 
     <!-- List of matching flat offers -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/flatOfferRecyclerView"
+        android:id="@+id/propertyRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="16dp"

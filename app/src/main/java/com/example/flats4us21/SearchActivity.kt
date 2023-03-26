@@ -8,13 +8,36 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.flats4us21.adapters.PropertyAdapter
+import com.example.flats4us21.data.Offer
+import com.example.flats4us21.databinding.ActivitySearchBinding
+import com.example.flats4us21.viewmodels.MainViewModel
 
 class SearchActivity : AppCompatActivity() {
-
+    private lateinit var recyclerview : RecyclerView
+    private lateinit var adapter: PropertyAdapter
+    private lateinit var viewModel : MainViewModel
+    private lateinit var binding : ActivitySearchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
+        binding = ActivitySearchBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
+        recyclerview = binding.propertyRecyclerView
+        val offers = viewModel.loadDataFromDb()
+        val onUserClick = {offer : Offer ->
+            viewModel.setOffer(offer)
+            val intent = Intent(this, OfferDetailActivity::class.java)
+            intent.putExtra("vm", viewModel)
+            startActivity(intent)
+        }
+        adapter = PropertyAdapter(offers, onUserClick)
+        recyclerview.adapter = adapter
+        recyclerview.layoutManager = LinearLayoutManager(this)
 
     }
 
