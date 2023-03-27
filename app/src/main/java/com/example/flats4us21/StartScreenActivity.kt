@@ -14,7 +14,7 @@ class StartScreenActivity : AppCompatActivity() {
         binding = ActivityStartScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+//asd
         binding.buttonLogin.setOnClickListener {
             Toast.makeText(this, "Login button clicked", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, LoginActivity::class.java)
